@@ -1,109 +1,33 @@
-# Augmented-Reality-Mobile-Device-Security
-ARSecure
-import cv2
-import numpy as np
+<h1 align="center">Hi 👋, I'm Girija Tandon</h1>
+<h3 align="center">Passionate about Machine Learning and constantly exploring its potential to solve real-world problems</h3>
+<img align="right" alt="Coding" Width="400" scr="https://devopsartisan.com/online-courses/machine-learning">
+<p align="left"> <img src="https://komarev.com/ghpvc/?username=girijatandon&label=Profile%20views&color=0e75b6&style=flat" alt="girijatandon" /> </p>
 
-# Load pre-trained Haar cascade classifiers
-face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
-eye_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_eye.xml')
-smile_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_smile.xml')
+<p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=girijatandon" alt="girijatandon" /></a> </p>
 
-# Function to detect motion using frame differencing
-def detect_motion(prev_gray, curr_gray):
-    frame_diff = cv2.absdiff(prev_gray, curr_gray)
-    _, motion_mask = cv2.threshold(frame_diff, 30, 255, cv2.THRESH_BINARY)
-    motion_pixels = np.count_nonzero(motion_mask)
-    return motion_pixels > 1000
+- 🔭 I’m currently working on [Augmented-Reality-Mobile-Device-Security](https://github.com/girijatandon/Augmented-Reality-Mobile-Device-Security.git)
 
-# Function to detect if eyes are open
-def detect_eyes_open(eyes):
-    return len(eyes) > 0
+- 🌱 I’m currently learning **Machine Learning**
 
-# Function to detect smiles
-def detect_smile(smiles):
-    return len(smiles) > 0
+- 👯 I’m looking to collaborate on **Augmented-Reality-Mobile-Device**
 
-# Function to check for head movement by comparing face bounding boxes
-def detect_head_movement(prev_faces, curr_faces):
-    if len(prev_faces) == 0 or len(curr_faces) == 0:
-        return False
-    prev_face = prev_faces[0]
-    curr_face = curr_faces[0]
-    prev_center = (prev_face[0] + prev_face[2] // 2, prev_face[1] + prev_face[3] // 2)
-    curr_center = (curr_face[0] + curr_face[2] // 2, curr_face[1] + curr_face[3] // 2)
-    distance = np.sqrt((prev_center[0] - curr_center[0]) ** 2 + (prev_center[1] - curr_center[1]) ** 2)
-    return distance > 10
+- 🤝 I’m looking for help with **Augmented-Reality-Mobile-Device**
 
-# Initialize video capture
-cap = cv2.VideoCapture(0)
+- 💬 Ask me about **Algorithm, Dataset, Models**
 
-# Initialize previous frame and faces
-ret, prev_frame = cap.read()
-prev_gray = cv2.cvtColor(prev_frame, cv2.COLOR_BGR2GRAY)
-prev_faces = []
+- 📫 How to reach me **https://github.com/girijatandon**
 
-# Main loop for liveness detection
-eye_counter = 0
-while True:
-    ret, frame = cap.read()
-    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+<h3 align="left">Connect with me:</h3>
+<p align="left">
+<a href="https://linkedin.com/in/girija tandon" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="girija tandon" height="30" width="40" /></a>
+<a href="https://www.hackerrank.com/girija tandon" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/hackerrank.svg" alt="girija tandon" height="30" width="40" /></a>
+</p>
 
-    # Detect faces
-    faces = face_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=5, minSize=(30, 30))
+<h3 align="left">Languages and Tools:</h3>
+<p align="left"> <a href="https://www.arduino.cc/" target="_blank" rel="noreferrer"> <img src="https://cdn.worldvectorlogo.com/logos/arduino-1.svg" alt="arduino" width="40" height="40"/> </a> <a href="https://www.cprogramming.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg" alt="c" width="40" height="40"/> </a> <a href="https://www.w3schools.com/cpp/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" alt="cplusplus" width="40" height="40"/> </a> <a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a> <a href="https://www.java.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="java" width="40" height="40"/> </a> <a href="https://www.linux.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" alt="linux" width="40" height="40"/> </a> <a href="https://www.mysql.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="40" height="40"/> </a> <a href="https://opencv.org/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/opencv/opencv-icon.svg" alt="opencv" width="40" height="40"/> </a> <a href="https://pandas.pydata.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/2ae2a900d2f041da66e950e4d48052658d850630/icons/pandas/pandas-original.svg" alt="pandas" width="40" height="40"/> </a> <a href="https://www.python.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/> </a> <a href="https://scikit-learn.org/" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="scikit_learn" width="40" height="40"/> </a> <a href="https://www.tensorflow.org" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/tensorflow/tensorflow-icon.svg" alt="tensorflow" width="40" height="40"/> </a> </p>
 
-    # Flags to track if any motion, eye blinking, smiling, or head movement is detected
-    motion_detected = False
-    eyes_detected = False
-    smile_detected = False
-    head_movement_detected = False
+<p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=girijatandon&show_icons=true&locale=en&layout=compact" alt="girijatandon" /></p>
 
-    # Process each detected face
-    for (x, y, w, h) in faces:
-        roi_gray = gray[y:y+h, x:x+w]
-        roi_color = frame[y:y+h, x:x+w]
+<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=girijatandon&show_icons=true&locale=en" alt="girijatandon" /></p>
 
-        # Detect eye blinking
-        eyes = eye_cascade.detectMultiScale(roi_gray, scaleFactor=1.1, minNeighbors=5, minSize=(30, 30))
-        if detect_eyes_open(eyes):
-            eyes_detected = True
-            eye_counter += 1
-
-        # Reset eye counter if no eyes detected
-        if eye_counter > 10:
-            eyes_detected = False
-            eye_counter = 0
-
-        # Detect smiling
-        smiles = smile_cascade.detectMultiScale(roi_gray, scaleFactor=1.7, minNeighbors=22, minSize=(25, 25))
-        if detect_smile(smiles):
-            smile_detected = True
-
-        # Check for head movement
-        if detect_head_movement(prev_faces, faces):
-            head_movement_detected = True
-
-        # Check for motion
-        if detect_motion(prev_gray, gray):
-            motion_detected = True
-
-    # Update the previous frame and faces
-    prev_gray = gray.copy()
-    prev_faces = faces
-
-    # Determine liveness
-    if motion_detected or eyes_detected or smile_detected or head_movement_detected:
-        cv2.putText(frame, "Real", (30, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
-    else:
-        cv2.putText(frame, "Fake", (30, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
-
-    # Display the frame
-    cv2.imshow('Liveness Detection', frame)
-
-    # Exit if 'q' is pressed
-    if cv2.waitKey(1) & 0xFF == ord('q'):
-        break
-
-# Release the video capture object and close all windows
-cap.release()
-cv2.destroyAllWindows()
-
+<p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=girijatandon&" alt="girijatandon" /></p>
